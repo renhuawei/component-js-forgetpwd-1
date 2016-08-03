@@ -143,7 +143,7 @@
 <script type="text/template" id="ResetResult" data-component="ResetResult" data-title="重置结果">
   <div class="common_bd">
     <div class="result_img">
-      <img src="../image/right@1x.png" alt="">
+      <img src="../component-js-forgetpwd/image/right@1x.png" alt="">
     </div>
     <div class="fs22">重置成功</div>
     <div class="tc">
@@ -266,7 +266,7 @@
           answer_3 = data.SAFETY_PROBLEM_ANSWER_3;
         }
         if (problem_1 !== '') {
-          if (data.SAFETY_PROBLEM_ANSWER_1 == "" || data.SAFETY_PROBLEM_ANSWER_1 == undefined) {
+        if (data.SAFETY_PROBLEM_ANSWER_1 == "" || data.SAFETY_PROBLEM_ANSWER_1 == undefined) {
             Bridge.alert("答案1不能为空!");
           } else if (data.SAFETY_PROBLEM_ANSWER_2 == "" || data.SAFETY_PROBLEM_ANSWER_2 == undefined) {
             Bridge.alert("答案2不能为空!");
@@ -274,11 +274,15 @@
             Bridge.alert("答案3不能为空!");
           } else if (data.loginPassword == "" || data.loginPassword == undefined) {
             Bridge.alert("密码不能为空!");
-          } else if (passwordtext.length < 96) {
+          }
+        /*
+           else if (passwordtext.length < 96) {
             Bridge.alert("密码不能少于6位!");
           } else if (data.loginPassword2 !== data.loginPassword) {
             Bridge.alert("两次密码输入不一致!");
-          } else {
+          }
+          */
+        else {
             var option = {
               param: {
                 PHONE_NO: api.getComponent('username').getValue(),
@@ -299,11 +303,13 @@
         } else {
           if (data.loginPassword == "" || data.loginPassword == undefined) {
             Bridge.alert("密码不能为空!");
-          } else if (passwordtext.length < 96) {
+          }
+          /*else if (passwordtext.length < 96) {
             Bridge.alert("密码不能少于6位!");
           } else if (data.loginPassword2 !== data.loginPassword) {
             Bridge.alert("两次密码输入不一致!");
-          } else {
+          }
+          */else {
             var option = {
               param: {
                 PHONE_NO: api.getComponent('username').getValue(),
