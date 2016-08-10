@@ -34,18 +34,16 @@ cmd进入工程根目录路径下(例如:HelloWorld)，执行 pastry bake bower 
 # 使用方法
 1. 由于暂时没有js的原生密码控件，将ForgetPwd.html里的校验密码的部分注释掉，实际使用时需将以下代码放开(注意代码出现两次，都要放开）：
 
-
-
+```
   /* 
-  
  else if (passwordtext.length < 96) {
             alert("密码不能少于6位!");
           } else if (data.loginPassword2 !== data.loginPassword) {
             alert("两次密码输入不一致!");
           }
-            
  */
- 
+```
+
  2.此组件暂时不能用js原生直接向前置发ajax请求，待以后完善。
 # 作者
 songwl
