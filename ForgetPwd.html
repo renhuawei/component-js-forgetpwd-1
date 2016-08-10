@@ -177,15 +177,15 @@
             if (data.RETCODE === "AAAAAAA") {
               Browser.history_goto("ResetResult");
             } else {
-              Bridge.errorAlert(data.RETMSG);
+              alert(data.RETMSG);
             }
           },
           onError: function (state, response) {/*处理错误 ，一般写在组件里面  未定义组件可用写在模型里面*/
             Bridge.dismissDialog();
             if (response.RETCODE) {
-              Bridge.errorAlert({content: response.RETMSG});
+              alert({content: response.RETMSG});
             } else {
-              Bridge.errorAlert({content: "网络连接超时，请检查您的网络！"});
+              alert({content: "网络连接超时，请检查您的网络！"});
             }
           }
         }
@@ -221,13 +221,13 @@
         var CODEReg = new RegExp("^[a-zA-Z0-9]{6}$");
         var username = new RegExp("^0{0,1}1[0-9]{10}$");
         if (data.USERNAME == "" || data.USERNAME == undefined) {
-          Bridge.alert("手机号不能为空!");
+          alert("手机号不能为空!");
         } else if (!username.test(data.USERNAME)) {
-          Bridge.alert("手机号格式不正确!");
+          alert("手机号格式不正确!");
         } else if (data.SMS_CODE == "" || data.SMS_CODE == undefined) {
-          Bridge.alert("验证码不能为空");
+          alert("验证码不能为空");
         } else if (!CODEReg.test(data.SMS_CODE)) {
-          Bridge.alert("验证码格式不正确");
+          alert("验证码格式不正确");
         } else {
           var option = {
             refresh:{
@@ -267,20 +267,21 @@
         }
         if (problem_1 !== '') {
         if (data.SAFETY_PROBLEM_ANSWER_1 == "" || data.SAFETY_PROBLEM_ANSWER_1 == undefined) {
-            Bridge.alert("答案1不能为空!");
+            alert("答案1不能为空!");
           } else if (data.SAFETY_PROBLEM_ANSWER_2 == "" || data.SAFETY_PROBLEM_ANSWER_2 == undefined) {
-            Bridge.alert("答案2不能为空!");
+            alert("答案2不能为空!");
           } else if (data.SAFETY_PROBLEM_ANSWER_3 == "" || data.SAFETY_PROBLEM_ANSWER_3 == undefined) {
-            Bridge.alert("答案3不能为空!");
+            alert("答案3不能为空!");
           } else if (data.loginPassword == "" || data.loginPassword == undefined) {
-            Bridge.alert("密码不能为空!");
+            alert("密码不能为空!");
           }
+        /*
            else if (passwordtext.length < 96) {
-            Bridge.alert("密码不能少于6位!");
+            alert("密码不能少于6位!");
           } else if (data.loginPassword2 !== data.loginPassword) {
-            Bridge.alert("两次密码输入不一致!");
+            alert("两次密码输入不一致!");
           }
-          
+          */
         else {
             var option = {
               param: {
@@ -301,13 +302,15 @@
           }
         } else {
           if (data.loginPassword == "" || data.loginPassword == undefined) {
-            Bridge.alert("密码不能为空!");
+            alert("密码不能为空!");
           }
+         /*
           else if (passwordtext.length < 96) {
-            Bridge.alert("密码不能少于6位!");
+            alert("密码不能少于6位!");
           } else if (data.loginPassword2 !== data.loginPassword) {
-            Bridge.alert("两次密码输入不一致!");
+            alert("两次密码输入不一致!");
           }
+          */
           else {
             var option = {
               param: {
